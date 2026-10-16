@@ -1,0 +1,108 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Atlas Blocked-By Map</title>
+<style>body{font-family:system-ui,sans-serif;margin:16px}p{max-width:70ch}</style></head><body>
+<h1>Atlas: what blocks what</h1>
+<p>An arrow means "must finish before". Features in the same wave don't block each other, so different people can work on them at the same time.</p>
+<pre class="mermaid">
+flowchart TD
+  subgraph W0["Wave 1 - can run at the same time"]
+    direction LR
+    n14["Foundation"]
+  end
+  subgraph W1["Wave 2 - can run at the same time"]
+    direction LR
+    n17["Login"]
+  end
+  subgraph W2["Wave 3 - can run at the same time"]
+    direction LR
+    n8["Connect Google Calendar"]
+  end
+  subgraph W3["Wave 4 - can run at the same time"]
+    direction LR
+    n11["Disconnect Account"]
+    n22["Sync Events"]
+  end
+  subgraph W4["Wave 5 - can run at the same time"]
+    direction LR
+    n4["Calendar View"]
+    n6["Connect Apple Calendar"]
+    n7["Connect Canvas"]
+    n9["Connect Microsoft Calendar"]
+    n15["Hide, Notes and Priority"]
+  end
+  subgraph W5["Wave 6 - can run at the same time"]
+    direction LR
+    n5["Conflicts"]
+    n27["Your Own Events"]
+  end
+  subgraph W6["Wave 7 - can run at the same time"]
+    direction LR
+    n10["Custom Alerts"]
+    n12["Export and Delete"]
+    n24["Today Dashboard and Inbox"]
+  end
+  subgraph W7["Wave 8 - can run at the same time"]
+    direction LR
+    n0["AI Chat"]
+    n20["Push and SMS"]
+    n23["Tasks"]
+  end
+  subgraph W8["Wave 9 - can run at the same time"]
+    direction LR
+    n19["Proposals and Approval"]
+    n26["Work Blocks"]
+  end
+  subgraph W9["Wave 10 - can run at the same time"]
+    direction LR
+    n2["AI Tools"]
+    n3["Block Tracking"]
+    n13["Fixed Routines"]
+    n25["Undo"]
+    n28["Zones, Buffers and Work Cap"]
+  end
+  subgraph W10["Wave 11 - can run at the same time"]
+    direction LR
+    n1["AI Reschedule and Chat History"]
+    n18["Plan From Instructions"]
+    n21["Rolling and Target Routines"]
+  end
+  subgraph W11["Wave 12 - can run at the same time"]
+    direction LR
+    n16["Learning From Tracked Time"]
+  end
+  n14 --> n17
+  n17 --> n8
+  n8 --> n22
+  n22 --> n7
+  n22 --> n9
+  n22 --> n6
+  n22 --> n4
+  n22 --> n15
+  n8 --> n11
+  n4 --> n5
+  n4 --> n27
+  n27 --> n12
+  n5 --> n24
+  n24 --> n23
+  n23 --> n26
+  n27 --> n26
+  n26 --> n3
+  n26 --> n13
+  n24 --> n0
+  n0 --> n19
+  n27 --> n19
+  n19 --> n2
+  n19 --> n25
+  n2 --> n18
+  n26 --> n18
+  n26 --> n28
+  n13 --> n21
+  n28 --> n21
+  n3 --> n16
+  n21 --> n16
+  n2 --> n1
+  n5 --> n1
+  n27 --> n10
+  n10 --> n20
+</pre>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.esm.min.mjs";mermaid.initialize({startOnLoad:true,flowchart:{useMaxWidth:true}});</script>
+</body></html>
