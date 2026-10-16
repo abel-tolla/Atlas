@@ -26,7 +26,7 @@ Atlas is built for everyone, not just students. The AI only proposes changes and
 
 ## Contributing
 
-We're a four-person team working through GitHub issues. Each feature parent issue starts with a "Write the user story" sub-issue.
+We're a five-person team working through GitHub issues. Each feature parent issue starts with a "Write the user story" sub-issue.
 
 1. Pick an issue and assign yourself.
 2. Create a branch from `main`.
