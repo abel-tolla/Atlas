@@ -30,6 +30,6 @@ We're a five-person team working through GitHub issues. Each feature parent issu
 
 Contributors:
 - Abel Tolla
--
+- Kirollos Shafik
 
 A full `CONTRIBUTING.md` will be added later.
