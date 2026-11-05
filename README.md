@@ -41,8 +41,11 @@ Open http://localhost:5173. Refresh the page to reset the demo.
 
 We're a five-person team working through GitHub issues. Each feature parent issue starts with a "Write the user story" sub-issue.
 
-1. Pick an issue and assign yourself.
-2. Create a branch from `main`.
-3. Open a pull request and request a review from a teammate.
+Contributors:
+- Abel Tolla
+- Kirollos Shafik
+- David
+- Athar
+- Nader
 
 A full `CONTRIBUTING.md` will be added later.
