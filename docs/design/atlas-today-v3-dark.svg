@@ -1,0 +1,240 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900">
+<title>Atlas Today (dark)</title>
+<defs>
+<linearGradient id="orb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#88E1FF"/><stop offset="1" stop-color="#38cdff"/></linearGradient>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#000b0f"/><stop offset="1" stop-color="#07222A"/></linearGradient>
+<radialGradient id="blobA" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#165669" stop-opacity="0.55"/><stop offset="1" stop-color="#165669" stop-opacity="0"/></radialGradient>
+<radialGradient id="blobB" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#38cdff" stop-opacity="0.1"/><stop offset="1" stop-color="#38cdff" stop-opacity="0"/></radialGradient>
+</defs>
+<g id="Background">
+<rect x="0" y="0" width="1440" height="900" rx="0" fill="url(#bg)"/>
+<circle cx="1180" cy="80" r="520" fill="url(#blobA)"/>
+<circle cx="120" cy="860" r="460" fill="url(#blobB)"/>
+</g>
+<g id="Sidebar">
+<rect x="16" y="16" width="220" height="868" rx="24" fill="#dceaf4" fill-opacity="0.06" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.12"/>
+<g id="Atlas mark" transform="translate(32 28) scale(0.3)"><rect x="4" y="12" width="112" height="104" rx="28" fill="#38cdff"/><rect x="36" y="2" width="10" height="22" rx="5" fill="#9bd4e9"/><rect x="74" y="2" width="10" height="22" rx="5" fill="#9bd4e9"/><circle cx="60" cy="66" r="34" fill="none" stroke="#000b0f" stroke-width="6"/><ellipse cx="60" cy="66" rx="14" ry="34" fill="none" stroke="#000b0f" stroke-width="5"/><line x1="28.2" y1="54" x2="91.8" y2="54" stroke="#000b0f" stroke-width="5"/><line x1="28.2" y1="78" x2="91.8" y2="78" stroke="#000b0f" stroke-width="5"/><circle cx="84" cy="66" r="6" fill="#165669"/></g>
+<path id="Atlas wordmark" transform="translate(25.1 18.32) scale(0.23)" fill="#dceaf4" d="M272.32 76.88H273.64L316.12 165.2H300.64L293.08 147.92H252.64L245.08 165.2H230.08ZM272.92 102.44 267.64 114.44 258.04 135.79999999999998H287.8L278.32 114.55999999999999L273.15999999999997 102.44ZM325.52 165.2V120.67999999999999H315.8V110.11999999999999H325.52V87.67999999999999L338.59999999999997 84.8V110.11999999999999H351.32V120.67999999999999H338.59999999999997V165.2ZM360.96000000000004 165.2V76.99999999999999H373.8V165.2ZM414.4 166.39999999999998Q407.08 166.39999999999998 400.78 162.92Q394.47999999999996 159.44 390.64 152.95999999999998Q386.79999999999995 146.48 386.79999999999995 137.48Q386.79999999999995 128.83999999999997 390.09999999999997 122.35999999999999Q393.4 115.88 399.46 112.28Q405.52 108.67999999999999 413.91999999999996 108.67999999999999Q418.96 108.67999999999999 423.1 110.41999999999999Q427.24 112.16 430.06 114.61999999999999Q432.88 117.07999999999998 433.84 119.35999999999999L434.08 110.11999999999999H446.44V165.2H434.2L433.96 155.48Q432.76 158.11999999999998 429.94 160.64Q427.12 163.16 423.15999999999997 164.77999999999997Q419.2 166.39999999999998 414.4 166.39999999999998ZM416.56 155.6Q421.0 155.6 424.65999999999997 153.5Q428.32 151.39999999999998 430.53999999999996 147.56Q432.76 143.72 432.76 138.44V137.6Q432.76 132.2 430.53999999999996 128.18Q428.32 124.16 424.65999999999997 121.94Q421.0 119.72 416.56 119.72Q408.52 119.72 404.5 124.88Q400.47999999999996 130.04 400.47999999999996 137.6Q400.47999999999996 145.28 404.5 150.44Q408.52 155.6 416.56 155.6ZM480.8 166.39999999999998Q476.96 166.39999999999998 472.82 165.67999999999998Q468.68 164.95999999999998 465.26 163.82Q461.84 162.67999999999998 460.04 161.35999999999999L464.36 151.16Q466.4 152.6 470.53999999999996 154.39999999999998Q474.68 156.2 480.8 156.2Q486.2 156.2 488.12 154.57999999999998Q490.03999999999996 152.95999999999998 490.03999999999996 150.79999999999998Q490.03999999999996 148.51999999999998 488.41999999999996 147.26Q486.8 146.0 483.8 144.92Q480.8 143.83999999999997 476.71999999999997 142.28Q472.76 140.6 469.15999999999997 138.38Q465.56 136.16 463.34000000000003 132.86Q461.12 129.56 461.12 124.75999999999999Q461.12 116.96 467.12 112.82Q473.12 108.67999999999999 482.96 108.67999999999999Q488.0 108.67999999999999 492.74 109.75999999999999Q497.48 110.83999999999999 499.88 112.51999999999998L495.2 122.83999999999999Q493.76 121.39999999999999 490.46 120.19999999999999Q487.15999999999997 119.0 482.59999999999997 119.0Q474.08 119.0 474.08 124.16Q474.08 126.67999999999999 475.94 128.18Q477.8 129.68 480.86 130.7Q483.92 131.72 487.52 133.16Q494.84 136.04 498.74 139.82Q502.64 143.6 502.64 149.83999999999997Q502.64 155.48 499.64 159.2Q496.64 162.92 491.65999999999997 164.65999999999997Q486.68 166.39999999999998 480.8 166.39999999999998Z"/>
+<rect x="28" y="100" width="196" height="36" rx="10" fill="#38cdff" fill-opacity="0.14"/>
+<g id="Icon - sun" transform="translate(42 109) scale(0.75)" fill="none" stroke="#38cdff" stroke-width="2.333" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" /> <path d="M12 2v2" /> <path d="M12 20v2" /> <path d="m4.93 4.93 1.41 1.41" /> <path d="m17.66 17.66 1.41 1.41" /> <path d="M2 12h2" /> <path d="M20 12h2" /> <path d="m6.34 17.66-1.41 1.41" /> <path d="m19.07 4.93-1.41 1.41" /></g>
+<text x="70" y="123" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="14" font-weight="400" fill="#9bd4e9" text-anchor="start" letter-spacing="0">Today</text>
+<g id="Icon - calendar" transform="translate(42 149) scale(0.75)" fill="none" stroke="#9AA7AF" stroke-width="2.333" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4" /> <path d="M16 2v4" /> <rect width="18" height="18" x="3" y="4" rx="2" /> <path d="M3 10h18" /></g>
+<text x="70" y="163" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="14" font-weight="400" fill="#9AA7AF" text-anchor="start" letter-spacing="0">Calendar</text>
+<g id="Icon - calendar-clock" transform="translate(42 189) scale(0.75)" fill="none" stroke="#9AA7AF" stroke-width="2.333" stroke-linecap="round" stroke-linejoin="round"><path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5" /> <path d="M16 2v4" /> <path d="M8 2v4" /> <path d="M3 10h5" /> <path d="M17.5 17.5 16 16.3V14" /> <circle cx="16" cy="16" r="6" /></g>
+<text x="70" y="203" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="14" font-weight="400" fill="#9AA7AF" text-anchor="start" letter-spacing="0">Schedule</text>
+<g id="Icon - list-checks" transform="translate(42 229) scale(0.75)" fill="none" stroke="#9AA7AF" stroke-width="2.333" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 2 2 4-4" /> <path d="m3 7 2 2 4-4" /> <path d="M13 6h8" /> <path d="M13 12h8" /> <path d="M13 18h8" /></g>
+<text x="70" y="243" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="14" font-weight="400" fill="#9AA7AF" text-anchor="start" letter-spacing="0">Tasks</text>
+<g id="Icon - repeat" transform="translate(42 269) scale(0.75)" fill="none" stroke="#9AA7AF" stroke-width="2.333" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4" /> <path d="M3 11v-1a4 4 0 0 1 4-4h14" /> <path d="m7 22-4-4 4-4" /> <path d="M21 13v1a4 4 0 0 1-4 4H3" /></g>
+<text x="70" y="283" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="14" font-weight="400" fill="#9AA7AF" text-anchor="start" letter-spacing="0">Routines</text>
+<g id="Icon - settings" transform="translate(42 309) scale(0.75)" fill="none" stroke="#9AA7AF" stroke-width="2.333" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" /> <circle cx="12" cy="12" r="3" /></g>
+<text x="70" y="323" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="14" font-weight="400" fill="#9AA7AF" text-anchor="start" letter-spacing="0">Settings</text>
+<text x="44" y="392" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7B888F" text-anchor="start" letter-spacing="0.66">CALENDARS</text>
+<circle cx="48" cy="420" r="5" fill="#8AB4F8"/>
+<text x="64" y="425" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#9AA7AF" text-anchor="start" letter-spacing="0">Google</text>
+<circle cx="48" cy="448" r="5" fill="#4CA6E8"/>
+<text x="64" y="453" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#9AA7AF" text-anchor="start" letter-spacing="0">Outlook</text>
+<circle cx="48" cy="476" r="5" fill="#FF7A59"/>
+<text x="64" y="481" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#9AA7AF" text-anchor="start" letter-spacing="0">Canvas</text>
+<circle cx="48" cy="504" r="5" fill="#A1A1A6"/>
+<text x="64" y="509" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#9AA7AF" text-anchor="start" letter-spacing="0">Apple</text>
+<circle cx="48" cy="532" r="5" fill="#38cdff"/>
+<text x="64" y="537" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#9AA7AF" text-anchor="start" letter-spacing="0">Atlas</text>
+<line x1="32" y1="818" x2="220" y2="818" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.08"/>
+<circle cx="52" cy="850" r="16" fill="#38cdff" fill-opacity="0.18"/>
+<text x="52" y="855" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#9bd4e9" text-anchor="middle" letter-spacing="0">AT</text>
+<text x="76" y="847" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#dceaf4" text-anchor="start" letter-spacing="0">Abel Tolla</text>
+<text x="76" y="863" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7B888F" text-anchor="start" letter-spacing="0">Free plan</text>
+</g>
+<g id="Header">
+<text x="260" y="76" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="34" font-weight="400" fill="#dceaf4" text-anchor="start" letter-spacing="-0.51">Today</text>
+<text x="260" y="100" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#9AA7AF" text-anchor="start" letter-spacing="0">Wednesday, November 4</text>
+<text x="1240" y="72" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#7B888F" text-anchor="end" letter-spacing="0">Synced 6:58 PM</text>
+<g id="Dark mode toggle">
+<circle cx="1274" cy="72" r="18" fill="#dceaf4" fill-opacity="0.1"/>
+<g id="Icon - sun" transform="translate(1265 63) scale(0.75)" fill="none" stroke="#dceaf4" stroke-width="2.333" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" /> <path d="M12 2v2" /> <path d="M12 20v2" /> <path d="m4.93 4.93 1.41 1.41" /> <path d="m17.66 17.66 1.41 1.41" /> <path d="M2 12h2" /> <path d="M20 12h2" /> <path d="m6.34 17.66-1.41 1.41" /> <path d="m19.07 4.93-1.41 1.41" /></g>
+</g>
+<rect x="1304" y="54" width="120" height="36" rx="18.0" fill="#38cdff"/>
+<text x="1364.0" y="76.5" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#000b0f" text-anchor="middle" letter-spacing="0">Sync Now</text>
+<g id="Icon - refresh-cw" transform="translate(1318 64) scale(0.6667)" fill="none" stroke="#000b0f" stroke-width="2.625" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" /> <path d="M21 3v5h-5" /> <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" /> <path d="M8 16H3v5" /></g>
+</g>
+<g id="AI composer">
+<rect x="260" y="130" width="640" height="76" rx="24" fill="#dceaf4" fill-opacity="0.06" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.12"/>
+<circle cx="300" cy="168" r="20" fill="url(#orb)"/>
+<g id="Icon - sparkles" transform="translate(290 158) scale(0.8333)" fill="none" stroke="#000b0f" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" /> <path d="M20 3v4" /> <path d="M22 5h-4" /> <path d="M4 17v2" /> <path d="M5 18H3" /></g>
+<text x="334" y="174" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="17" font-weight="400" fill="#7B888F" text-anchor="start" letter-spacing="0">Ask Atlas about your day...</text>
+<circle cx="864" cy="168" r="18" fill="#38cdff"/>
+<g id="Icon - arrow-up" transform="translate(855 159) scale(0.75)" fill="none" stroke="#000b0f" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 7-7 7 7" /> <path d="M12 19V5" /></g>
+</g>
+<g id="Suggestions">
+<rect x="260" y="218" width="187" height="30" rx="15" fill="#dceaf4" fill-opacity="0.08" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.12"/>
+<text x="353.5" y="237" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#9AA7AF" text-anchor="middle" letter-spacing="0">What should I work on now?</text>
+<rect x="455" y="218" width="201" height="30" rx="15" fill="#dceaf4" fill-opacity="0.08" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.12"/>
+<text x="555.5" y="237" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#9AA7AF" text-anchor="middle" letter-spacing="0">Can I finish this before Friday?</text>
+<rect x="664" y="218" width="156" height="30" rx="15" fill="#dceaf4" fill-opacity="0.08" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.12"/>
+<text x="742.0" y="237" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#9AA7AF" text-anchor="middle" letter-spacing="0">Find me two free hours</text>
+</g>
+<g id="Inbox">
+<text x="260" y="292" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="20" font-weight="400" fill="#dceaf4" text-anchor="start" letter-spacing="-0.2">Inbox</text>
+<circle cx="330" cy="285" r="10" fill="#FF9F0A"/>
+<text x="330" y="289" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#000b0f" text-anchor="middle" letter-spacing="0">4</text>
+<text x="900" y="291" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#7B888F" text-anchor="end" letter-spacing="0">Grouped by type</text>
+<g id="Inbox item - AI proposal">
+<rect x="260" y="316" width="640" height="148" rx="20" fill="#dceaf4" fill-opacity="0.06" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.12"/>
+<circle cx="298" cy="354" r="18" fill="url(#orb)"/>
+<text x="332" y="342" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#9bd4e9" text-anchor="start" letter-spacing="0.66">AI PROPOSAL</text>
+<g id="Icon - sparkles" transform="translate(288 344) scale(0.8333)" fill="none" stroke="#000b0f" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" /> <path d="M20 3v4" /> <path d="M22 5h-4" /> <path d="M4 17v2" /> <path d="M5 18H3" /></g>
+<text x="332" y="365" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="16" font-weight="400" fill="#dceaf4" text-anchor="start" letter-spacing="0">Haskell quiz prep: 3 work blocks</text>
+<rect x="332" y="378" width="136" height="28" rx="14" fill="#38cdff" fill-opacity="0.12"/>
+<text x="400.0" y="396" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#9bd4e9" text-anchor="middle" letter-spacing="0">Thu 4:00 - 5:00 PM</text>
+<rect x="476" y="378" width="129" height="28" rx="14" fill="#38cdff" fill-opacity="0.12"/>
+<text x="540.5" y="396" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#9bd4e9" text-anchor="middle" letter-spacing="0">Fri 2:00 - 3:00 PM</text>
+<rect x="613" y="378" width="141" height="28" rx="14" fill="#38cdff" fill-opacity="0.12"/>
+<text x="683.5" y="396" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#9bd4e9" text-anchor="middle" letter-spacing="0">Sat 10:00 - 11:00 AM</text>
+<rect x="332" y="420" width="100" height="32" rx="16.0" fill="#38cdff"/>
+<text x="382.0" y="440.5" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#000b0f" text-anchor="middle" letter-spacing="0">Approve</text>
+<rect x="440" y="420" width="88" height="32" rx="16.0" fill="#dceaf4" fill-opacity="0.1"/>
+<text x="484.0" y="440.5" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#dceaf4" text-anchor="middle" letter-spacing="0">Modify</text>
+<text x="576.0" y="440.5" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#9bd4e9" text-anchor="middle" letter-spacing="0">Dismiss</text>
+</g>
+<g id="Inbox item - Conflict">
+<rect x="260" y="476" width="640" height="124" rx="20" fill="#dceaf4" fill-opacity="0.06" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.12"/>
+<circle cx="298" cy="514" r="18" fill="#FF453A"/>
+<text x="332" y="502" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#FF8A80" text-anchor="start" letter-spacing="0.66">CONFLICT</text>
+<g id="Icon - calendar-x" transform="translate(288 504) scale(0.8333)" fill="none" stroke="#000b0f" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4" /> <path d="M16 2v4" /> <rect width="18" height="18" x="3" y="4" rx="2" /> <path d="M3 10h18" /> <path d="m14 14-4 4" /> <path d="m10 14 4 4" /></g>
+<text x="332" y="525" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="16" font-weight="400" fill="#dceaf4" text-anchor="start" letter-spacing="0">Haskell study overlaps Part-time shift</text>
+<text x="332" y="544" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#9AA7AF" text-anchor="start" letter-spacing="0">Today, 4:00 - 5:00 PM</text>
+<rect x="332" y="556" width="140" height="32" rx="16.0" fill="#dceaf4" fill-opacity="0.1"/>
+<text x="402.0" y="576.5" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#dceaf4" text-anchor="middle" letter-spacing="0">Keep study block</text>
+<rect x="480" y="556" width="100" height="32" rx="16.0" fill="#dceaf4" fill-opacity="0.1"/>
+<text x="530.0" y="576.5" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#dceaf4" text-anchor="middle" letter-spacing="0">Keep shift</text>
+<text x="643.0" y="576.5" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#9bd4e9" text-anchor="middle" letter-spacing="0">Both are fine</text>
+</g>
+<g id="Inbox item - Block tracking">
+<rect x="260" y="612" width="640" height="108" rx="20" fill="#dceaf4" fill-opacity="0.06" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.12"/>
+<circle cx="298" cy="650" r="18" fill="#38cdff"/>
+<text x="332" y="638" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#9bd4e9" text-anchor="start" letter-spacing="0.66">HOW DID IT GO?</text>
+<g id="Icon - check" transform="translate(288 640) scale(0.8333)" fill="none" stroke="#000b0f" stroke-width="2.64" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></g>
+<text x="332" y="661" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="16" font-weight="400" fill="#dceaf4" text-anchor="start" letter-spacing="0">Atlas sprint tickets</text>
+<text x="332" y="680" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#9AA7AF" text-anchor="start" letter-spacing="0">12:00 - 1:30 PM  ·  planned 90 min</text>
+<rect x="604" y="632" width="276" height="36" rx="10" fill="#dceaf4" fill-opacity="0.1"/>
+<text x="650" y="655" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#dceaf4" text-anchor="middle" letter-spacing="0">Faster</text>
+<text x="742" y="655" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#dceaf4" text-anchor="middle" letter-spacing="0">About right</text>
+<line x1="696" y1="640" x2="696" y2="660" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.16"/>
+<text x="834" y="655" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#dceaf4" text-anchor="middle" letter-spacing="0">Longer</text>
+<line x1="788" y1="640" x2="788" y2="660" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.16"/>
+<text x="880" y="696" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#9bd4e9" text-anchor="end" letter-spacing="0">Partial  ·  Skipped  ·  Exact minutes</text>
+</g>
+<g id="Inbox item - Connection expired">
+<rect x="260" y="732" width="640" height="84" rx="20" fill="#dceaf4" fill-opacity="0.06" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.12"/>
+<circle cx="298" cy="770" r="18" fill="#FF9F0A"/>
+<text x="332" y="758" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#FFB340" text-anchor="start" letter-spacing="0.66">CONNECTION EXPIRED</text>
+<g id="Icon - unplug" transform="translate(288 760) scale(0.8333)" fill="none" stroke="#000b0f" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="m19 5 3-3" /> <path d="m2 22 3-3" /> <path d="M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z" /> <path d="M7.5 13.5 10 11" /> <path d="M10.5 16.5 13 14" /> <path d="m12 6 6 6 2.3-2.3a2.4 2.4 0 0 0 0-3.4l-2.6-2.6a2.4 2.4 0 0 0-3.4 0Z" /></g>
+<text x="332" y="779" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="16" font-weight="400" fill="#dceaf4" text-anchor="start" letter-spacing="0">Apple Calendar needs re-authentication</text>
+<text x="332" y="798" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#9AA7AF" text-anchor="start" letter-spacing="0">Cached events are still showing</text>
+<rect x="776" y="758" width="104" height="32" rx="16.0" fill="#38cdff"/>
+<text x="828.0" y="778.5" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#000b0f" text-anchor="middle" letter-spacing="0">Reconnect</text>
+</g>
+</g>
+<g id="Timeline">
+<rect x="924" y="130" width="500" height="470" rx="20" fill="#dceaf4" fill-opacity="0.06" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.12"/>
+<text x="944" y="164" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="17" font-weight="400" fill="#dceaf4" text-anchor="start" letter-spacing="0">Today's timeline</text>
+<text x="1388" y="164" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#9bd4e9" text-anchor="end" letter-spacing="0">Open calendar</text>
+<g id="Icon - chevron-right" transform="translate(1388 155) scale(0.6667)" fill="none" stroke="#9bd4e9" stroke-width="2.625" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></g>
+<text x="944" y="198" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7B888F" text-anchor="start" letter-spacing="0">8 AM</text>
+<line x1="996" y1="194" x2="1408" y2="194" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.07"/>
+<text x="944" y="228" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7B888F" text-anchor="start" letter-spacing="0">9 AM</text>
+<line x1="996" y1="224" x2="1408" y2="224" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.07"/>
+<text x="944" y="258" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7B888F" text-anchor="start" letter-spacing="0">10 AM</text>
+<line x1="996" y1="254" x2="1408" y2="254" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.07"/>
+<text x="944" y="288" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7B888F" text-anchor="start" letter-spacing="0">11 AM</text>
+<line x1="996" y1="284" x2="1408" y2="284" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.07"/>
+<text x="944" y="318" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7B888F" text-anchor="start" letter-spacing="0">12 PM</text>
+<line x1="996" y1="314" x2="1408" y2="314" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.07"/>
+<text x="944" y="348" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7B888F" text-anchor="start" letter-spacing="0">1 PM</text>
+<line x1="996" y1="344" x2="1408" y2="344" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.07"/>
+<text x="944" y="378" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7B888F" text-anchor="start" letter-spacing="0">2 PM</text>
+<line x1="996" y1="374" x2="1408" y2="374" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.07"/>
+<text x="944" y="408" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7B888F" text-anchor="start" letter-spacing="0">3 PM</text>
+<line x1="996" y1="404" x2="1408" y2="404" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.07"/>
+<text x="944" y="438" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7B888F" text-anchor="start" letter-spacing="0">4 PM</text>
+<line x1="996" y1="434" x2="1408" y2="434" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.07"/>
+<text x="944" y="468" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7B888F" text-anchor="start" letter-spacing="0">5 PM</text>
+<line x1="996" y1="464" x2="1408" y2="464" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.07"/>
+<text x="944" y="498" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7B888F" text-anchor="start" letter-spacing="0">6 PM</text>
+<line x1="996" y1="494" x2="1408" y2="494" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.07"/>
+<text x="944" y="528" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7B888F" text-anchor="start" letter-spacing="0">7 PM</text>
+<line x1="996" y1="524" x2="1408" y2="524" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.07"/>
+<text x="944" y="558" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7B888F" text-anchor="start" letter-spacing="0">8 PM</text>
+<line x1="996" y1="554" x2="1408" y2="554" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.07"/>
+<text x="944" y="588" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7B888F" text-anchor="start" letter-spacing="0">9 PM</text>
+<line x1="996" y1="584" x2="1408" y2="584" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.07"/>
+<g id="Event - Dentist">
+<rect x="1004" y="210.0" width="404" height="20.5" rx="8" fill="#A1A1A6" fill-opacity="0.18"/>
+<rect x="1005" y="214.0" width="3" height="12.5" rx="1.5" fill="#A1A1A6"/>
+<text x="1018" y="224.25" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#dceaf4" text-anchor="start" letter-spacing="0">Dentist  ·  8:30 AM  ·  Apple</text>
+</g>
+<g id="Event - CS 455 Lecture">
+<rect x="1004" y="240.0" width="404" height="35.5" rx="8" fill="#8AB4F8" fill-opacity="0.18"/>
+<rect x="1005" y="244.0" width="3" height="27.5" rx="1.5" fill="#8AB4F8"/>
+<text x="1018" y="257.0" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#dceaf4" text-anchor="start" letter-spacing="0">CS 455 Lecture</text>
+<text x="1018" y="272.0" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#9AA7AF" text-anchor="start" letter-spacing="0">9:30 - 10:45 AM  ·  Google</text>
+</g>
+<g id="Event - Atlas team standup">
+<rect x="1004" y="285" width="404" height="20.5" rx="8" fill="#4CA6E8" fill-opacity="0.18"/>
+<rect x="1005" y="289" width="3" height="12.5" rx="1.5" fill="#4CA6E8"/>
+<text x="1018" y="299.25" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#dceaf4" text-anchor="start" letter-spacing="0">Atlas team standup  ·  11:00 AM  ·  Outlook</text>
+</g>
+<g id="Event - Atlas sprint tickets">
+<rect x="1004" y="315" width="404" height="43.0" rx="8" fill="#38cdff" fill-opacity="0.18" stroke="#38cdff" stroke-width="1" stroke-dasharray="4 3"/>
+<rect x="1005" y="319" width="3" height="35.0" rx="1.5" fill="#38cdff"/>
+<text x="1018" y="332" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#dceaf4" text-anchor="start" letter-spacing="0">Atlas sprint tickets</text>
+<text x="1018" y="347" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#9AA7AF" text-anchor="start" letter-spacing="0">12:00 - 1:30 PM  ·  Needs check</text>
+</g>
+<g id="Event - Part-time shift">
+<rect x="1004" y="390.0" width="196" height="103.0" rx="8" fill="#8AB4F8" fill-opacity="0.18"/>
+<rect x="1005" y="394.0" width="3" height="95.0" rx="1.5" fill="#8AB4F8"/>
+<text x="1018" y="407.0" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#dceaf4" text-anchor="start" letter-spacing="0">Part-time shift</text>
+<text x="1018" y="422.0" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#9AA7AF" text-anchor="start" letter-spacing="0">2:30 - 6:00 PM  ·  Google</text>
+</g>
+<g id="Event - Haskell study">
+<rect x="1208" y="435" width="200" height="28" rx="8" fill="#38cdff" fill-opacity="0.18"/>
+<rect x="1209" y="439" width="3" height="20" rx="1.5" fill="#38cdff"/>
+<text x="1222" y="453.0" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#dceaf4" text-anchor="start" letter-spacing="0">Haskell study  ·  4:00 PM</text>
+<circle cx="1394" cy="449.0" r="8" fill="#FF9F0A"/>
+<text x="1394" y="453.0" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#000b0f" text-anchor="middle" letter-spacing="0">!</text>
+</g>
+<g id="Event - Gym: Push day">
+<rect x="1004" y="540.0" width="404" height="28.0" rx="8" fill="#38cdff" fill-opacity="0.18"/>
+<rect x="1005" y="544.0" width="3" height="20.0" rx="1.5" fill="#38cdff"/>
+<text x="1018" y="558.0" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#dceaf4" text-anchor="start" letter-spacing="0">Gym: Push day  ·  7:30 PM  ·  Atlas</text>
+</g>
+<g id="Now indicator">
+<line x1="996" y1="525.5" x2="1408" y2="525.5" stroke="#FF453A" stroke-width="2" stroke-opacity="1"/>
+<circle cx="996" cy="525.5" r="4.5" fill="#FF453A"/>
+<rect x="938" y="515.5" width="48" height="20" rx="10" fill="#FF453A"/>
+<text x="962" y="529.5" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#000b0f" text-anchor="middle" letter-spacing="0">7:03</text>
+</g>
+</g>
+<g id="Tasks due">
+<rect x="924" y="624" width="500" height="196" rx="20" fill="#dceaf4" fill-opacity="0.06" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.12"/>
+<text x="944" y="658" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="17" font-weight="400" fill="#dceaf4" text-anchor="start" letter-spacing="0">Tasks due</text>
+<text x="1404" y="658" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#7B888F" text-anchor="end" letter-spacing="0">3</text>
+<circle cx="954" cy="691" r="9" fill="#dceaf4" fill-opacity="0.0" stroke="#7B888F" stroke-width="1.5"/>
+<text x="976" y="689" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="14" font-weight="400" fill="#dceaf4" text-anchor="start" letter-spacing="0">Haskell quiz 5 prep</text>
+<text x="976" y="706" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#9AA7AF" text-anchor="start" letter-spacing="0">Due tonight 11:59 PM  ·  1 h</text>
+<rect x="1333" y="680" width="71" height="22" rx="11" fill="#FF453A" fill-opacity="0.18"/>
+<text x="1368.5" y="695" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#FF8A80" text-anchor="middle" letter-spacing="0">Important</text>
+<line x1="976" y1="716" x2="1404" y2="716" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.07"/>
+<circle cx="954" cy="737" r="9" fill="#dceaf4" fill-opacity="0.0" stroke="#7B888F" stroke-width="1.5"/>
+<text x="976" y="735" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="14" font-weight="400" fill="#dceaf4" text-anchor="start" letter-spacing="0">Atlas wireframes</text>
+<text x="976" y="752" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#9AA7AF" text-anchor="start" letter-spacing="0">Due Fri  ·  2 h</text>
+<rect x="1358" y="726" width="46" height="22" rx="11" fill="#38cdff" fill-opacity="0.18"/>
+<text x="1381.0" y="741" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#9bd4e9" text-anchor="middle" letter-spacing="0">Atlas</text>
+<line x1="976" y1="762" x2="1404" y2="762" stroke="#dceaf4" stroke-width="1" stroke-opacity="0.07"/>
+<circle cx="954" cy="783" r="9" fill="#dceaf4" fill-opacity="0.0" stroke="#7B888F" stroke-width="1.5"/>
+<text x="976" y="781" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="14" font-weight="400" fill="#dceaf4" text-anchor="start" letter-spacing="0">CS 455 ch. 3 reading</text>
+<text x="976" y="798" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#9AA7AF" text-anchor="start" letter-spacing="0">Due Thu  ·  1.5 h</text>
+<rect x="1347" y="772" width="57" height="22" rx="11" fill="#FF7A59" fill-opacity="0.18"/>
+<text x="1375.5" y="787" font-family="Alata, SF Pro Display, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#FF9B80" text-anchor="middle" letter-spacing="0">Canvas</text>
+</g>
+</svg>

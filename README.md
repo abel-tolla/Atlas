@@ -22,7 +22,20 @@ Atlas is built for everyone, not just students. The AI only proposes changes and
 ## Table of Contents
 
 - [Description](#description)
+- [Running the demo](#running-the-demo)
 - [Contributing](#contributing)
+
+## Running the demo
+
+The `web/` folder holds a front-end demo of the Today view, built with Vite, React and CSS from the designs in `docs/design/`. It uses mock data from `web/src/data.ts` and has no backend.
+
+```bash
+cd web
+npm install
+npm run dev
+```
+
+Open http://localhost:5173. Refresh the page to reset the demo.
 
 ## Contributing
 
