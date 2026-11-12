@@ -71,10 +71,39 @@ The app lives in `web/` and moves in place. The components stay as they are, and
 
 ### Neon and Drizzle
 
-- Create one Neon project. Give each teammate their own Neon branch for development, plus one branch for production. Branches are free and copy the schema.
-- Use Drizzle ORM with the `@neondatabase/serverless` driver, and `drizzle-kit` for migrations committed to the repo.
-- Use PGlite (Postgres in memory) for tests, so `npm test` needs no network or database.
-- Add `.env*` to `.gitignore` before anyone creates an env file. It isn't ignored today.
+**Built.** Everything below is in `web/`. The schema has tests that run its migration in PGlite (Postgres in memory), so `npm test` needs no network or database.
+
+| File | What it is |
+| --- | --- |
+| `src/db/schema/auth.ts` | `users`, in the shape the Auth.js Drizzle adapter expects. The Login epic adds `accounts`, `sessions` and `verification_tokens` next to it |
+| `src/db/schema/calendar.ts` | Every calendar table below, plus `SYNCED_EVENT_COLUMNS`: the only `events` columns sync may write |
+| `drizzle/0000_init.sql` | The first migration, generated from the schema. Never edit it by hand |
+| `src/db/index.ts` | `getDb()` for server code. It uses `node-postgres` with a pool and Vercel's `attachDatabasePool`, which is Neon's recommended setup on Vercel and supports the transactions sync needs. It reads `DATABASE_URL` through `@neon/env`, which names any missing variable. Importing it in a client component fails the build |
+| `neon.ts`, `.neon` | The Neon project link and branch policy, created by `neon init`. Postgres only: sign-in stays with Auth.js |
+| `src/app/api/health/route.ts` | `GET /api/health` reports whether the database is reachable and migrated, with counts only. It's the one API route that works without signing in |
+| `src/server/secrets.ts` | `seal()` and `open()` for tokens and feed links (AES-256-GCM). Pass the account id as `context`, so a sealed value copied to another row won't open |
+| `src/db/schema.test.ts`, `src/server/secrets.test.ts` | Tests for no duplicates, local changes surviving a sync, cascades, the database rules and tamper detection |
+
+**Scripts:** `npm run db:generate` after changing the schema, `npm run db:migrate` to apply migrations to your Neon branch, and `npm run db:studio` to browse the data.
+
+**Neon setup.** The project exists (`icy-mountain-45548709`) and the app is linked to its `production` branch with `neon init`. The first migration (`0000_init`) is applied to `production`, and `/api/health` reports `migrated: true` with 8 tables.
+
+Remaining steps:
+1. **Each developer:** install the CLI (`npm i -g neon`), run `neon login`, then `neon env pull` in `web/` to get `.env.local`.
+2. **Future schema changes:**
+   - Run `npm run db:generate`, then `npm run db:migrate`, which uses the direct connection.
+   - Neon's advice is to try a migration on a branch before `production`: run `neon checkout dev-<name> --create`, migrate that, then migrate `production`.
+   - New branches expire after 7 days under the current `neon.ts` policy. Change `ttl` there if developers want long-lived branches.
+3. **Token key:** generate it once with `openssl rand -base64 32` and share it as `TOKEN_ENCRYPTION_KEY`, in each `.env.local` and in Vercel. If the key changes later, every stored token becomes unreadable and users have to reconnect.
+4. **Check:** run `npm run dev` and open `/api/health`. It should report `"database": "ok"` and `"migrated": true`.
+
+`web/.env.example` lists every variable.
+
+**The range rule for events queries:**
+- The event starts before the range ends.
+- It either ends after the range starts or starts inside the range.
+
+The second half lets a zero-length Canvas deadline exactly at midnight count, without also showing an event that merely ends at midnight. `schema.test.ts` has this query.
 
 ### Schema
 

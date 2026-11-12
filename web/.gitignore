@@ -8,6 +8,7 @@ out/
 next-env.d.ts
 *.tsbuildinfo
 
-# Secrets. Get them with `vercel env pull .env.local`, never commit them.
+# Secrets. Get them with `neon env pull` (see .env.example). Never commit them.
 .env*
 !.env.example
+.neon
