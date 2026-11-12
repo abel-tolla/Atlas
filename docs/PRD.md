@@ -30,7 +30,7 @@ Each feature has an ID (F-01 and up) used across every tab. Priority labels are 
 
 | ID | Requirement |
 | --- | --- |
-| F-01 | Sign in with Google or Microsoft OAuth. No email and password accounts. |
+| F-01 | Sign up and sign in with an email and password, or with Google or Microsoft OAuth. Email verification and password reset by email. |
 | F-02 | Connect Google Calendar, listing sub-calendars with a visibility toggle. Minimum scopes, read-only. |
 | F-03 | Connect Microsoft 365 and Outlook calendars on the same terms. |
 | F-04 | Connect Canvas. Assignments import as dated events users can attach tasks to. |

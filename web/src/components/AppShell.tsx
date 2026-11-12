@@ -12,6 +12,8 @@ import {
   type SetStateAction,
 } from 'react'
 import { DEMO_DAY, INBOX, type InboxId } from '../data'
+import { saveTimeZone } from '../lib/auth/actions'
+import type { CurrentUser } from '../lib/auth/current-user'
 import { useTheme } from '../useTheme'
 import { Header } from './Header'
 import { Sidebar, viewFor } from './Sidebar'
@@ -36,7 +38,7 @@ export function useShell() {
 }
 
 /** The sidebar, header and toast around every signed-in page. */
-export function AppShell({ children }: { children: ReactNode }) {
+export function AppShell({ children, user }: { children: ReactNode; user: CurrentUser }) {
   const pathname = usePathname()
   const { theme, toggleTheme } = useTheme()
   const [toast, setToast] = useState('')
@@ -51,10 +53,25 @@ export function AppShell({ children }: { children: ReactNode }) {
     return () => clearTimeout(timer)
   }, [toast])
 
+  // After log out, the back button may restore this page from the browser's cache.
+  // Reload it, so the server sends the visitor to /login instead of showing private data (#210).
+  useEffect(() => {
+    const onShow = (e: PageTransitionEvent) => {
+      if (e.persisted) window.location.reload()
+    }
+    window.addEventListener('pageshow', onShow)
+    return () => window.removeEventListener('pageshow', onShow)
+  }, [])
+
+  // First visit: tell the server the browser's time zone (F-37). The server keeps the first one.
+  useEffect(() => {
+    if (!user.timeZone) void saveTimeZone(Intl.DateTimeFormat().resolvedOptions().timeZone)
+  }, [user.timeZone])
+
   return (
     <ShellContext.Provider value={{ notify, inbox, setInbox, doneTasks, setDoneTasks }}>
       <div className="app">
-        <Sidebar view={view} />
+        <Sidebar view={view} user={user} />
         <main className="main">
           <Header title={view} date={DEMO_DAY.date} theme={theme} onToggleTheme={toggleTheme} />
           {children}

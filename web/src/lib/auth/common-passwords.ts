@@ -1,0 +1,25 @@
+// shortcut: a short built-in list of very common passwords of 8+ characters.
+// Upgrade to the Have I Been Pwned range API (k-anonymity) before launch.
+export const COMMON_PASSWORDS = new Set([
+  '12345678', '123456789', '1234567890', '11111111', '00000000', '87654321', '12341234',
+  '123123123', '1q2w3e4r', '1qaz2wsx', '1q2w3e4r5t', 'qwertyui', 'qwertyuiop', 'qwerty123',
+  'qwerty12', 'asdfghjk', 'asdfghjkl', 'zxcvbnm1', 'zxcvbnm123', 'password', 'password1',
+  'password12', 'password123', 'password1234', 'passw0rd', 'p@ssw0rd', 'p@ssword', 'pass1234',
+  'letmein1', 'letmein123', 'welcome1', 'welcome123', 'welcome12', 'iloveyou', 'iloveyou1',
+  'iloveyou2', 'admin123', 'administrator', 'adminadmin', 'abc12345', 'abcd1234', 'abcdefgh',
+  'abcdefg1', 'monkey123', 'dragon123', 'master123', 'sunshine', 'sunshine1', 'princess',
+  'princess1', 'football', 'football1', 'baseball', 'baseball1', 'basketball', 'superman',
+  'batman123', 'trustno1', 'whatever', 'starwars', 'computer', 'internet', 'michael1',
+  'jennifer', 'jessica1', 'charlie1', 'shadow12', 'freedom1', 'changeme', 'changeme1',
+  'default123', 'test1234', 'testtest', 'testing123', 'guest123', 'login123', 'secret123',
+  'mypassword', 'mypassword1', 'newpassword', 'student123', 'student1', 'teacher123',
+  'school123', 'university', 'calendar', 'calendar1', 'calendar123', 'atlas123', 'atlasatlas',
+  'atlas1234', 'qazwsxedc', 'qazwsx123', 'zaq12wsx', 'q1w2e3r4', 'q1w2e3r4t5', '1234qwer',
+  'a1b2c3d4', 'aa123456', 'aaaaaaaa', 'bbbbbbbb', 'cccccccc', '99999999', '88888888',
+  '77777777', '66666666', '55555555', '44444444', '33333333', '22222222', '12121212',
+  '13131313', '14789632', '147258369', '159753456', '987654321', '0987654321', 'qwe12345',
+  'qwer1234', 'asd12345', 'asdf1234', 'zxc12345', 'pa55word', 'pa$$word', 'p4ssw0rd',
+  'passw0rd1', 'letmein!', 'welcome!', 'iloveu12', 'loveyou1', 'lovelove', 'babygirl',
+  'football12', 'liverpool', 'chelsea1', 'arsenal1', 'manchester', 'barcelona', 'ronaldo7',
+  'harrypotter', 'pokemon1', 'minecraft', 'fortnite1', 'rockyou1', 'hello123', 'hellohello',
+])

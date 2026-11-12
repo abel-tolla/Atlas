@@ -4,7 +4,7 @@ Atlas has 40 features: 23 Must, 12 Should, 5 Could, and 8 ideas ruled out for th
 
 | Priority | ID | Feature | Depends on |
 | --- | --- | --- | --- |
-| Must | F-01 | Google and Microsoft sign-in | none |
+| Must | F-01 | Sign up and sign-in (email and password, Google, Microsoft) | none |
 | Must | F-40 | Security baseline | none |
 | Must | F-37 | Time zones | none |
 | Must | F-39 | Responsive, phone-first layout | none |

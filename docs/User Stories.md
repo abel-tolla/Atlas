@@ -4,11 +4,15 @@ Every story carries the feature ID it delivers. Stories for Won't features are n
 
 ## Accounts, sync and calendar
 
-**US-01 (F-01) Sign in.** As a user, I want to sign in with Google or Microsoft so I don't need another password.
+**US-01 (F-01) Sign up and sign in.** As a user, I want to create an account and sign in with an email and password, or with Google or Microsoft, so I can pick the way that suits me and get back to my calendars from any device.
 
-- Login offers Google and Microsoft. A first login creates my account, later logins reuse it.
-- A failed or cancelled sign-in shows a clear error.
-- Logged-out visitors are redirected away from every app page.
+- Sign up and login offer Google, Microsoft, and an email and password. A first Google or Microsoft login creates my account, later logins reuse it.
+- Signing up with an email and password sends me a link. I can't enter the app until I click it, and the link then takes me to Today.
+- If I forget my password, I can ask for a reset link by email. The link works once and expires in 1 hour, and a reset signs me out everywhere else.
+- A failed or cancelled sign-in shows a clear error and a way to try again. The messages never reveal whether an email has an account.
+- Too many wrong tries in a row are blocked for a few minutes.
+- Logged-out visitors are redirected to login from every app page and then back to the page they asked for.
+- My session survives a refresh and a browser restart. Logging out ends it on the server, and the back button shows nothing private afterwards.
 
 **US-02 (F-02) Connect Google.** As a user, I want to connect Google Calendar so my events appear in Atlas.
 

@@ -2,6 +2,7 @@ import {
   Calendar,
   CalendarClock,
   ListChecks,
+  LogOut,
   Repeat,
   Settings,
   Sun,
@@ -9,6 +10,8 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import { SOURCES } from '../data'
+import { logOut } from '../lib/auth/actions'
+import type { CurrentUser } from '../lib/auth/current-user'
 import { AtlasLogo } from './AtlasLogo'
 
 export type View =
@@ -36,7 +39,15 @@ export function viewFor(pathname: string): View {
   return match?.view ?? 'Today'
 }
 
-export function Sidebar({ view }: { view: View }) {
+/** Up to two letters: the first letters of the first and last name, or of the email. */
+export function initials({ name, email }: Pick<CurrentUser, 'name' | 'email'>): string {
+  const words = (name ?? '').trim().split(/\s+/).filter(Boolean)
+  const letters =
+    words.length > 1 ? words[0][0] + words[words.length - 1][0] : (words[0] ?? email).slice(0, 2)
+  return letters.toUpperCase()
+}
+
+export function Sidebar({ view, user }: { view: View; user: CurrentUser }) {
   return (
     <aside className="sidebar card">
       <AtlasLogo />
@@ -67,13 +78,24 @@ export function Sidebar({ view }: { view: View }) {
       </div>
 
       <div className="account">
-        <span className="avatar" aria-hidden>
-          AT
-        </span>
-        <div>
-          <p className="account-name">Abel Tolla</p>
+        {user.image ? (
+          // A Google or Microsoft picture, so next/image would need every host listed.
+          // eslint-disable-next-line @next/next/no-img-element
+          <img className="avatar" src={user.image} alt="" referrerPolicy="no-referrer" />
+        ) : (
+          <span className="avatar" aria-hidden>
+            {initials(user)}
+          </span>
+        )}
+        <div className="account-text">
+          <p className="account-name">{user.name ?? user.email}</p>
           <p className="account-plan">Free plan</p>
         </div>
+        <form action={logOut}>
+          <button className="account-logout" aria-label="Log out" title="Log out">
+            <LogOut size={18} strokeWidth={1.75} absoluteStrokeWidth aria-hidden />
+          </button>
+        </form>
       </div>
     </aside>
   )
