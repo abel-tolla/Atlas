@@ -27,7 +27,7 @@ Atlas is built for everyone, not just students. The AI only proposes changes and
 
 ## Running the demo
 
-The `web/` folder holds a front-end demo of the Today view, built with Vite, React and CSS from the designs in `docs/design/`. It uses mock data from `web/src/data.ts` and has no backend.
+The `web/` folder holds the Atlas app, built with Next.js, React and CSS from the designs in `docs/design/`. The Today and Calendar views run on mock data from `web/src/data.ts`, and there is no backend yet.
 
 ```bash
 cd web
@@ -35,7 +35,9 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:5173. Refresh the page to reset the demo.
+Open http://localhost:3000. Refresh the page to reset the demo. Run the tests with `npm test`.
+
+To see the calendar's other states, add `?mock=slow`, `?mock=delayed`, `?mock=empty`, `?mock=error` or `?mock=stress` to the address.
 
 ## Contributing
 

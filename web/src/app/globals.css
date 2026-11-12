@@ -215,6 +215,13 @@ button:disabled {
   filter: brightness(0.95);
 }
 
+a.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
 .btn--primary {
   min-width: 100px;
   color: var(--on-brand);
@@ -298,6 +305,7 @@ button:disabled {
   font-size: 14px;
   color: var(--ink-2);
   text-align: left;
+  text-decoration: none;
 }
 
 .nav-item:hover {

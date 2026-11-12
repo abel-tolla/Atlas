@@ -50,9 +50,14 @@ interface Store {
  * to the URL to see the other states of the calendar.
  */
 export function mockMode() {
+  // Read once, when the page first loads, so the switch survives moving
+  // between pages and the calendar rewriting its own address.
   if (typeof window === 'undefined') return null
-  return new URLSearchParams(window.location.search).get('mock')
+  initialMock ??= new URLSearchParams(window.location.search).get('mock') ?? ''
+  return initialMock || null
 }
+
+let initialMock: string | undefined
 
 function seed(): Store {
   return {

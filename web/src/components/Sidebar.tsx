@@ -7,6 +7,7 @@ import {
   Sun,
   type LucideIcon,
 } from 'lucide-react'
+import Link from 'next/link'
 import { SOURCES } from '../data'
 import { AtlasLogo } from './AtlasLogo'
 
@@ -18,36 +19,38 @@ export type View =
   | 'Routines'
   | 'Settings'
 
-const NAV: { view: View; icon: LucideIcon }[] = [
-  { view: 'Today', icon: Sun },
-  { view: 'Calendar', icon: Calendar },
-  { view: 'Schedule', icon: CalendarClock },
-  { view: 'Tasks', icon: ListChecks },
-  { view: 'Routines', icon: Repeat },
-  { view: 'Settings', icon: Settings },
+export const NAV: { view: View; href: string; icon: LucideIcon }[] = [
+  { view: 'Today', href: '/', icon: Sun },
+  { view: 'Calendar', href: '/calendar', icon: Calendar },
+  { view: 'Schedule', href: '/schedule', icon: CalendarClock },
+  { view: 'Tasks', href: '/tasks', icon: ListChecks },
+  { view: 'Routines', href: '/routines', icon: Repeat },
+  { view: 'Settings', href: '/settings', icon: Settings },
 ]
 
-interface SidebarProps {
-  view: View
-  onNavigate: (view: View) => void
+/** Which view a path belongs to, for the header and the active nav item. */
+export function viewFor(pathname: string): View {
+  const match = NAV.find(({ href }) =>
+    href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(`${href}/`),
+  )
+  return match?.view ?? 'Today'
 }
 
-export function Sidebar({ view, onNavigate }: SidebarProps) {
+export function Sidebar({ view }: { view: View }) {
   return (
     <aside className="sidebar card">
       <AtlasLogo />
       <nav className="nav" aria-label="Main">
-        {NAV.map(({ view: item, icon: Icon }) => (
-          <button
+        {NAV.map(({ view: item, href, icon: Icon }) => (
+          <Link
             key={item}
-            type="button"
+            href={href}
             className="nav-item"
             aria-current={view === item ? 'page' : undefined}
-            onClick={() => onNavigate(item)}
           >
             <Icon size={18} strokeWidth={1.75} absoluteStrokeWidth aria-hidden />
             {item}
-          </button>
+          </Link>
         ))}
       </nav>
 

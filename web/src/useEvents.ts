@@ -20,7 +20,7 @@ interface Loaded {
  * an edit, the old events stay on screen until the new ones arrive.
  */
 export function useEvents(range: DateRange) {
-  const version = useSyncExternalStore(subscribe, getVersion)
+  const version = useSyncExternalStore(subscribe, getVersion, getVersion)
   const key = `${range.start.getTime()}-${range.end.getTime()}`
   const [loaded, setLoaded] = useState<Loaded>({ key: '' })
   const [attempt, setAttempt] = useState(0)

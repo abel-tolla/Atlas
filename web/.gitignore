@@ -1,3 +1,13 @@
 node_modules/
 dist/
 *.local
+
+# Next.js
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# Secrets. Get them with `vercel env pull .env.local`, never commit them.
+.env*
+!.env.example
