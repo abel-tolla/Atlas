@@ -56,23 +56,23 @@ Every story carries the feature ID it delivers. Stories for Won't features are n
 - Clicking an event opens its details: time, location, source, notes, priority.
 - A week of events loads in under a second.
 
-**US-10 (F-11) Hide, annotate and flag synced events.** As a user, I want to change how a synced event behaves in Atlas without touching the original.
+**US-10 (F-11) Hide, annotate and flag synced events.** As a student with several shared calendars, I want to hide, annotate and prioritize synced events inside Atlas so that my calendar shows what matters to me without changing the original in Google or Outlook.
 
-- I can hide an event, add notes, set priority and mark it overlap-friendly.
+- I can hide an event, add notes, set priority and importance, and mark it overlap-friendly. Each change is saved to the event's history.
 - A re-sync never undoes any of these changes.
-- A "show hidden" toggle lists hidden events with the reason (skipped, moved, conflict flagged, conflict resolved).
-- Hidden events no longer block planning.
+- A "show hidden" toggle lists hidden events with the reason, and hidden events no longer count as conflicts.
 
-**US-11 (F-12) Spot conflicts.** As a user, I want overlaps flagged so I can decide which one wins.
+**US-11 (F-12) Spot conflicts.** As a student juggling classes, work and study blocks, I want overlapping events flagged so that I notice a clash before it happens and decide which event wins.
 
-- Overlapping events show a warning marker unless one allows overlap.
-- More than three overlaps collapse into a "+N more" badge.
-- Nothing is resolved for me. I choose which event keeps its slot, or mark both as fine.
+- Overlapping events show a warning marker in Day, Week and Month, unless one allows overlap. Events that only touch do not clash.
+- Three or more overlapping events collapse into a "+N more" badge that opens the full list.
+- Nothing is resolved for me. I keep one event (the other is hidden) or mark both as fine, and the choice is logged.
 
-**US-12 (F-13) Add my own events.** As a user, I want to create, edit and delete events inside Atlas.
+**US-12 (F-13) Add my own events.** As a user, I want to create, edit, move and delete my own events inside Atlas so that personal plans and work blocks live next to my synced calendars.
 
-- Atlas-owned events can be edited and truly deleted.
-- Synced events cannot be edited in Atlas. The popover says to change them in the source app.
+- The event form takes a title, time, place, category and importance, and the event shows up on the calendar.
+- I can drag an Atlas event to a new time, and Atlas rechecks it for conflicts.
+- Synced events cannot be changed in Atlas. The popover says to change them in the source app.
 
 **US-13 (F-14) Start my day on Today.** As a user, I want a Today screen with an inbox and my calendar so I know what to do next.
 

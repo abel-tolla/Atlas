@@ -1,3 +1,4 @@
+import { parseISO, startOfDay } from 'date-fns'
 import { ChevronRight } from 'lucide-react'
 import {
   DEMO_DAY,
@@ -5,6 +6,14 @@ import {
   sourceLabel,
   type CalendarEvent,
 } from '../data'
+import { layoutDay } from '../layout'
+import {
+  DEMO_NOW,
+  durationMinutes,
+  formatTime,
+  formatTimeRange,
+  minutesOfDay,
+} from '../time'
 
 const FIRST_HOUR = 8
 const LAST_HOUR = 21
@@ -17,22 +26,41 @@ const hourLabel = (hour: number) =>
 
 const toPx = (minutes: number) => (minutes - FIRST_HOUR * 60) * PX_PER_MINUTE
 
-const overlaps = (a: CalendarEvent, b: CalendarEvent) =>
-  a.start < b.start + b.minutes && b.start < a.start + a.minutes
+const startMinutes = (event: CalendarEvent) =>
+  minutesOfDay(parseISO(event.start))
+
+const lengthMinutes = (event: CalendarEvent) =>
+  durationMinutes(event.start, event.end)
 
 /** The lane is null when the event has the full width of the timeline. */
-function laneOf(event: CalendarEvent, events: CalendarEvent[]) {
-  const others = events.filter((e) => e !== event && overlaps(e, event))
-  if (others.length === 0) return null
-  return others.some((e) => e.start < event.start) ? 'right' : 'left'
+function lanesOf(events: CalendarEvent[]) {
+  const { placed } = layoutDay(events, startOfDay(DEMO_NOW))
+  return new Map(
+    placed.map(({ event, col, cols }) => [
+      event.id,
+      cols === 1 ? null : col === 0 ? ('left' as const) : ('right' as const),
+    ]),
+  )
 }
+
+/**
+ * The timeline is narrow, so it flags only the event that lands on top of
+ * an earlier one. The calendar flags both.
+ */
+const flagged = (event: CalendarEvent, events: CalendarEvent[]) =>
+  event.conflictsWith.some((id) =>
+    events.some((other) => other.id === id && other.start <= event.start),
+  )
 
 interface TimelineProps {
   events: CalendarEvent[]
   onOpenCalendar: () => void
 }
 
-export function Timeline({ events, onOpenCalendar }: TimelineProps) {
+export function Timeline({ events: allEvents, onOpenCalendar }: TimelineProps) {
+  // All-day events (like Canvas due dates) have no place on an hour grid.
+  const events = allEvents.filter((event) => !event.allDay)
+  const lanes = lanesOf(events)
   const hours = Array.from(
     { length: LAST_HOUR - FIRST_HOUR + 1 },
     (_, index) => FIRST_HOUR + index,
@@ -63,7 +91,8 @@ export function Timeline({ events, onOpenCalendar }: TimelineProps) {
             <EventBlock
               key={event.id}
               event={event}
-              lane={laneOf(event, events)}
+              lane={lanes.get(event.id) ?? null}
+              conflict={flagged(event, events)}
             />
           ))}
         </ol>
@@ -83,11 +112,17 @@ export function Timeline({ events, onOpenCalendar }: TimelineProps) {
 interface EventBlockProps {
   event: CalendarEvent
   lane: 'left' | 'right' | null
+  conflict: boolean
 }
 
-function EventBlock({ event, lane }: EventBlockProps) {
-  const twoLine = event.minutes >= TWO_LINE_MIN_MINUTES
+function EventBlock({ event, lane, conflict }: EventBlockProps) {
+  const minutes = lengthMinutes(event)
+  const twoLine = minutes >= TWO_LINE_MIN_MINUTES
   const source = sourceLabel(event.source)
+  const start = parseISO(event.start)
+  const time = twoLine
+    ? formatTimeRange(start, parseISO(event.end))
+    : formatTime(start)
   const className = [
     'event',
     twoLine ? 'event--tall' : '',
@@ -102,24 +137,24 @@ function EventBlock({ event, lane }: EventBlockProps) {
       data-source={event.source}
       data-lane={lane ?? undefined}
       style={{
-        top: toPx(event.start) + EVENT_INSET,
-        height: event.minutes * PX_PER_MINUTE - 2 * EVENT_INSET,
+        top: toPx(startMinutes(event)) + EVENT_INSET,
+        height: minutes * PX_PER_MINUTE - 2 * EVENT_INSET,
       }}
     >
       {twoLine ? (
         <>
           <span className="event-title">{event.title}</span>
           <span className="event-meta">
-            {event.time}  ·  {event.status ?? source}
+            {time}  ·  {event.status ?? source}
           </span>
         </>
       ) : (
         <span className="event-line">
-          {event.title}  ·  {event.time}
+          {event.title}  ·  {time}
           {lane ? '' : `  ·  ${source}`}
         </span>
       )}
-      {event.conflict && (
+      {conflict && (
         <span className="event-flag" role="img" aria-label="Conflict">
           !
         </span>
