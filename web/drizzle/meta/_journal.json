@@ -15,6 +15,13 @@
       "when": 1794523217811,
       "tag": "0001_login",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1794525053174,
+      "tag": "0002_sync_lock",
+      "breakpoints": true
     }
   ]
 }

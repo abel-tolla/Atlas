@@ -1,0 +1,1 @@
+ALTER TABLE "connected_accounts" ADD COLUMN "sync_locked_until" timestamp with time zone;

@@ -131,6 +131,33 @@ Two indexes cover the calendar's range query: `events (user_id, starts_at)` and 
 
 ## Part B: Sync engine (from epic #9)
 
+**Built.** Everything below is in `web/src/server/sync/`, tested against the real migrations in PGlite with a fake provider (`engine.test.ts`, 35 tests). Each test names the issue it checks.
+
+| File | What it is |
+| --- | --- |
+| `types.ts` | The adapter contract, plus `ReauthRequiredError` and `ProviderUnavailableError`. These two errors are how an adapter tells the engine what went wrong |
+| `engine.ts` | `syncAccount()`, `syncAllAccounts()` for the daily cron, and `syncNow()` for the button |
+| `retry.ts` | Up to 3 tries with doubling waits. Honours a provider's Retry-After, up to 10 seconds |
+| `adapters.ts` | The adapter for each provider. Empty until Parts C and D |
+| `fakeProvider.ts` | The pretend provider the tests use |
+| `src/app/api/cron/daily-sync/route.ts`, `web/vercel.json` | The daily sync at 09:00 UTC. It needs `CRON_SECRET`, and returns counts only |
+
+**Decided while building:**
+- **One sync per account at a time.** A run claims the account through `connected_accounts.sync_locked_until`, added in migration `0002_sync_lock`. Without it, the daily sync and Sync Now could each mark the other's new events as removed. A lock left by a crashed run expires after 10 minutes.
+- **A calendar or course the provider stops listing is kept, with its events.** It just stops syncing. A finished course's deadlines are still worth seeing, and the user can hide it.
+- **Messages for the user never include raw errors:**
+  - A refused token shows the adapter's own message and sets `needs_reconnect`.
+  - A provider outage after retries keeps the account `active` with `last_error` set, which the views show as "sync delayed".
+  - Anything unexpected sets `error` with a generic message, and only the error message is logged on the server.
+- **Sync Now checks and claims the 60-second cooldown in one statement,** so two quick presses can't both get through. Too soon throws `CooldownError` with the seconds left.
+
+**What adapters must follow:** never put a token, a feed link or a raw response body in an error message. Throw `ReauthRequiredError` with a message the user can act on, and `ProviderUnavailableError` for 5xx, 429 and network failures.
+
+**Still to do:**
+- `POST /api/sync` is a thin route around `syncNow()`. It waits for `requireUser()` from the Login epic.
+- Apply migration `0002_sync_lock` to `production` with `npm run db:migrate`.
+- Add `CRON_SECRET` and `TOKEN_ENCRYPTION_KEY` to Vercel.
+
 ### One adapter per provider
 
 Each provider gets one small adapter, and everything else is shared:

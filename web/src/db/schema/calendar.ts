@@ -95,6 +95,11 @@ export const connectedAccounts = pgTable(
     lastSyncedAt: at('last_synced_at'),
     /** For the 60-second Sync Now cooldown, enforced on the server (#66). */
     lastManualSyncAt: at('last_manual_sync_at'),
+    /**
+     * Set while a sync of this account runs, so the daily sync and Sync Now
+     * never run at once. Expires on its own if a sync dies midway.
+     */
+    syncLockedUntil: at('sync_locked_until'),
     /** A readable message for Settings. Never a token or a raw response. */
     lastError: text('last_error'),
     createdAt: at('created_at').notNull().defaultNow(),
