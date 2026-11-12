@@ -5,10 +5,14 @@ import { NextResponse, type NextRequest } from 'next/server'
 // proxy checks have been bypassed in Next.js before.
 
 const OPEN_PAGES = ['/login', '/signup', '/verify-email', '/forgot-password', '/reset-password']
+// /api/health reports only counts and timings, never data (see its route file).
+const OPEN_API = ['/api/health']
 const COOKIE = 'authjs.session-token'
 
 const isOpen = (path: string) =>
-  path.startsWith('/api/auth/') || OPEN_PAGES.some((p) => path === p || path.startsWith(`${p}/`))
+  path.startsWith('/api/auth/') ||
+  OPEN_API.includes(path) ||
+  OPEN_PAGES.some((p) => path === p || path.startsWith(`${p}/`))
 
 export function proxy(request: NextRequest) {
   const { pathname, search } = request.nextUrl

@@ -46,6 +46,12 @@ describe('proxy (first pass only, the layout does the real check)', () => {
     expect(proxy(request('/calendar', '__Secure-authjs.session-token.0=abc')).status).toBe(200)
   })
 
+  it('lets the health check through without a session, and nothing else under /api', () => {
+    expect(proxy(request('/api/health')).status).toBe(200)
+    expect(proxy(request('/api/healthz')).status).toBe(401)
+    expect(proxy(request('/api/health/details')).status).toBe(401)
+  })
+
   it('does not treat a lookalike path as a sign-in page', () => {
     expect(proxy(request('/login-admin')).status).toBe(307)
     expect(proxy(request('/api/authx')).status).toBe(401)

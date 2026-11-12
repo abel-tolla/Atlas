@@ -39,16 +39,6 @@ CREATE TABLE "rate_limits" (
 	"expires_at" timestamp with time zone NOT NULL
 );
 --> statement-breakpoint
-CREATE TABLE "users" (
-	"id" text PRIMARY KEY NOT NULL,
-	"name" text,
-	"email" text NOT NULL,
-	"email_verified" timestamp with time zone,
-	"image" text,
-	"time_zone" text,
-	"password_hash" text
-);
---> statement-breakpoint
 CREATE TABLE "verification_tokens" (
 	"identifier" text NOT NULL,
 	"token" text NOT NULL,
@@ -56,6 +46,8 @@ CREATE TABLE "verification_tokens" (
 	CONSTRAINT "verification_tokens_identifier_token_pk" PRIMARY KEY("identifier","token")
 );
 --> statement-breakpoint
+ALTER TABLE "users" ALTER COLUMN "email" SET NOT NULL;--> statement-breakpoint
+ALTER TABLE "users" ADD COLUMN "password_hash" text;--> statement-breakpoint
 ALTER TABLE "accounts" ADD CONSTRAINT "accounts_user_id_users_id_fk" FOREIGN KEY ("user_id") REFERENCES "public"."users"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "auth_sessions" ADD CONSTRAINT "auth_sessions_user_id_users_id_fk" FOREIGN KEY ("user_id") REFERENCES "public"."users"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "email_tokens" ADD CONSTRAINT "email_tokens_user_id_users_id_fk" FOREIGN KEY ("user_id") REFERENCES "public"."users"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint

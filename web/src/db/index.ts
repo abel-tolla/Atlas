@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // The database client for server code: route handlers, server components,
 // the sync engine and cron jobs. Importing it from a client component fails
 // the build, so the connection string can never reach the browser.
@@ -7,6 +6,7 @@ import 'server-only'
 import { parseEnv } from '@neon/env'
 import { attachDatabasePool } from '@vercel/functions'
 import { drizzle } from 'drizzle-orm/node-postgres'
+import type { PgDatabase } from 'drizzle-orm/pg-core'
 import { Pool } from 'pg'
 import neonConfig from '../../neon'
 import * as schema from './schema'
@@ -38,26 +38,9 @@ export function getDb() {
   return cache.atlasDb
 }
 
-export type Db = ReturnType<typeof getDb>
-=======
-import { neon } from '@neondatabase/serverless'
-import { drizzle } from 'drizzle-orm/neon-http'
-import type { PgDatabase } from 'drizzle-orm/pg-core'
-import * as schema from './schema'
-
-/** Any Drizzle Postgres database: Neon in production, PGlite in tests. */
+/**
+ * Any Drizzle Postgres database with this schema: the pool above in production,
+ * PGlite (Postgres in memory) in tests. Code that takes a `Db` runs on both.
+ */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type Db = PgDatabase<any, typeof schema>
-
-let db: Db | undefined
-
-/** Created on first use, so `next build` works without DATABASE_URL. */
-export function getDb(): Db {
-  if (!db) {
-    const url = process.env.DATABASE_URL
-    if (!url) throw new Error('DATABASE_URL is not set.')
-    db = drizzle({ client: neon(url), schema })
-  }
-  return db
-}
->>>>>>> 2aabe29 (feat: implemented login)

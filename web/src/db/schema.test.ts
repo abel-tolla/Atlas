@@ -105,15 +105,21 @@ describe('migrations', () => {
       sql`select table_name from information_schema.tables where table_schema = 'public' order by 1`,
     )
     // Drizzle keeps its own bookkeeping table in a separate "drizzle" schema.
+    // The Login epic adds accounts, auth_sessions, email_tokens, rate_limits and verification_tokens.
     expect(result.rows.map((r) => r.table_name)).toEqual([
+      'accounts',
       'acknowledged_conflicts',
+      'auth_sessions',
       'connected_accounts',
+      'email_tokens',
       'event_history',
       'event_overrides',
       'events',
+      'rate_limits',
       'source_calendars',
       'sync_runs',
       'users',
+      'verification_tokens',
     ])
   })
 })

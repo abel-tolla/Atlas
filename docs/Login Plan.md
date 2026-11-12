@@ -10,18 +10,21 @@ This plan covers the Login epic (#7): signing up and signing in with an email an
 
 ## Status
 
-Built in `web/src` (Nov 2026): the schema and migration (`db/`, `web/drizzle/`), the rules in `lib/auth/` (passwords, tokens, rate limits, sessions, sign-up, verify, reset, credentials check), `auth.ts`, `proxy.ts`, the five pages under `app/(auth)/`, the layout check, the sidebar account and log out, and unit tests for all of it against an in-memory Postgres.
+Built in `web/src` (Nov 2026): the login tables in `db/schema/auth.ts` with the migration `web/drizzle/0001_login.sql` (on top of the Neon work's `0000_init`), the rules in `lib/auth/` (passwords, tokens, rate limits, sessions, sign-up, verify, reset, credentials check), `auth.ts`, `proxy.ts`, the five pages under `app/(auth)/`, the layout check, the sidebar account and log out, and tests for all of it.
 
-Not done, because it needs accounts and a browser that the code can't create:
-- Google Cloud and Microsoft Entra setup, the Resend domain, and the Neon branch (step 1). Until then, only the logged-out paths have been run, with a placeholder database.
+**Tested.** `tsc` is clean, `next build` works, and 137 `vitest` tests pass against an in-memory Postgres. The running app was also driven over HTTP against a real local Postgres. Checked: sign-in sets the cookie and creates one `auth_sessions` row; log out deletes the row and the old cookie then redirects to `/login`; deleting the row on the server kills a still-valid cookie; wrong password and unknown email give the same answer; an unverified account is refused with `email_not_verified`; the sixth try is blocked; sign-up, the duplicate-address warning, the confirm button, forgot and reset all work through the real forms; pages are sent with `no-store`; the social buttons redirect to Google and Microsoft with the right callback address and the `openid profile email` scope.
+
+Not done, because it needs accounts or a real browser:
+- Google Cloud and Microsoft Entra setup, the Resend domain, and a shared Neon branch (step 1). The HTTP run used a local Postgres and printed emails in the terminal.
 - A real sign-in with each provider, and a real email in Gmail and Outlook.
-- Browser end-to-end tests. The unit tests cover the rules, but not the forms or the cookie round trip.
-- Running the migration on Neon: `npm run db:migrate` in `web/` with `DATABASE_URL` set.
+- Browser tests that click through the forms with JavaScript on (the HTTP run posted the same forms the way a browser without JavaScript does), and a check of the `pageshow` back-button reload.
+- Running the migrations on the shared Neon database: `npm run db:migrate` in `web/` with `DATABASE_URL_UNPOOLED` set. `0001_login.sql` makes `users.email` required, so it fails if that database already holds a user with no email.
 - GitHub issues for the five **New** rows, and the teammate review of US-01.
 
 Where the code differs from the plan below:
+- The database client is the Neon branch's `node-postgres` pool in `db/index.ts`. The `Db` type is any Drizzle Postgres database, so the rules also run on PGlite in tests.
 - The link in the verification email opens a page with a "Verify my email" button. The button, not the page load, uses the link, so an email scanner that opens links can't use it up.
-- Logged-out API calls get a `401` with no body from `proxy.ts`, not a redirect. Pages redirect to `/login?from=...`.
+- Logged-out API calls get a `401` with no body from `proxy.ts`, not a redirect. Pages redirect to `/login?from=...`. `/api/health` is the one API route open to logged-out callers.
 - Email tokens are found by their SHA-256 hash, so a plain database lookup replaces a constant-time compare. The token is 32 random bytes, so the hash can't be guessed bit by bit.
 - A new sign-up for an email that nobody has verified replaces the older, unverified one. This closes the pre-hijack gap from the other side, next to the guard for Google and Microsoft.
 - `AUTH_URL` is a new environment variable. It sets the address in email links.
