@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
-import { Placeholder } from '../../../components/Placeholder'
+import { ConnectionsPanel } from '../../../components/settings/ConnectionsPanel'
 
 export const metadata: Metadata = { title: 'Settings · Atlas' }
 
 export default function SettingsPage() {
-  return <Placeholder view="Settings" />
+  return <ConnectionsPanel />
 }

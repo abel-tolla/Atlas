@@ -2354,3 +2354,149 @@ img.avatar {
   color: var(--ink);
   background: var(--control);
 }
+
+/* Settings → Connections */
+.settings {
+  display: grid;
+  gap: 16px;
+  max-width: 760px;
+}
+
+.settings-title {
+  font-size: 20px;
+  letter-spacing: -0.01em;
+}
+
+.settings-sub {
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+
+.conn-card {
+  display: grid;
+  gap: 14px;
+  padding: 18px 20px;
+}
+
+.conn-skeleton {
+  height: 56px;
+}
+
+.conn-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.conn-head .source-mark {
+  width: 32px;
+  height: 32px;
+  font-size: 15px;
+}
+
+.conn-name {
+  flex: 1;
+  min-width: 0;
+}
+
+.conn-name h3 {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.conn-name .item-meta {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.conn-state {
+  flex: none;
+  padding: 3px 10px;
+  border-radius: 11px;
+  font-size: 12px;
+  color: var(--brand-ink);
+  background: color-mix(in srgb, var(--brand) 14%, transparent);
+}
+
+.conn-state[data-state='delayed'] {
+  color: var(--warning-ink);
+  background: color-mix(in srgb, var(--warning) 16%, transparent);
+}
+
+.conn-state[data-state='needs_reconnect'],
+.conn-state[data-state='error'] {
+  color: var(--danger-ink);
+  background: color-mix(in srgb, var(--danger) 14%, transparent);
+}
+
+.conn-courses {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 14px;
+}
+
+.conn-courses legend {
+  margin-bottom: 6px;
+  padding: 0;
+  color: var(--ink-3);
+}
+
+.conn-courses label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.conn-courses input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--brand);
+}
+
+.conn-methods {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  height: 36px;
+  padding: 3px;
+}
+
+.conn-methods button {
+  border-radius: 8px;
+  color: var(--ink-2);
+}
+
+.conn-methods button + button {
+  border-left: 0;
+}
+
+.conn-methods button[aria-pressed='true'] {
+  color: var(--ink);
+  background: var(--surface-solid);
+  box-shadow: 0 1px 2px rgb(11 25 35 / 0.12);
+}
+
+.conn-steps {
+  display: grid;
+  gap: 4px;
+  padding-left: 20px;
+  list-style: decimal;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+
+.conn-actions {
+  margin-top: 0;
+}
+
+.conn-card .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}

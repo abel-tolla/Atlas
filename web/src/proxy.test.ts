@@ -52,6 +52,13 @@ describe('proxy (first pass only, the layout does the real check)', () => {
     expect(proxy(request('/api/health/details')).status).toBe(401)
   })
 
+  it('lets Vercel Cron reach the daily sync, which checks its own secret', () => {
+    expect(proxy(request('/api/cron/daily-sync')).status).toBe(200)
+    expect(proxy(request('/api/cron/other')).status).toBe(401)
+    expect(proxy(request('/api/sync')).status).toBe(401)
+    expect(proxy(request('/api/connect/canvas')).status).toBe(401)
+  })
+
   it('does not treat a lookalike path as a sign-in page', () => {
     expect(proxy(request('/login-admin')).status).toBe(307)
     expect(proxy(request('/api/authx')).status).toBe(401)

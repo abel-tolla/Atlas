@@ -25,11 +25,11 @@ Every story carries the feature ID it delivers. Stories for Won't features are n
 - Same consent, listing and duplicate rules as US-02.
 - An expired token refreshes silently, or shows a re-connect banner if it can't.
 
-**US-04 (F-04) Connect Canvas.** As a student, I want to connect Canvas so my assignments appear with their due dates.
+**US-04 (F-04) Connect Canvas.** As a student, I want to connect my Canvas account so that my assignment deadlines appear next to my classes and shifts, and I never plan around a due date I forgot.
 
-- Assignments import as dated events with the course name.
-- Changed due dates update the existing item, not a new one.
-- I can connect with a personal access token or calendar feed if my school blocks OAuth.
+- I can connect with my Canvas calendar feed link, or with my school's Canvas address and a personal access token, since many schools turn access tokens off. Settings explains where to find each.
+- My assignments appear as deadlines with their course name, I can choose which courses to show, and syncing again never creates duplicates.
+- A changed due date moves the same deadline, keeping my notes. A broken link or token tells me how to reconnect, while my saved deadlines stay visible.
 
 **US-05 (F-05) Connect Apple Calendar.** As a user, I want to connect iCloud so my personal events are included.
 

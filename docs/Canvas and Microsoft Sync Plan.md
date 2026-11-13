@@ -216,6 +216,27 @@ The engine is tested with a fake adapter and PGlite. These tests cover no duplic
 
 ## Part D: Canvas (epic #44)
 
+**Built.** Both ways of connecting work: the **calendar feed link**, which our school allows, and the **access token**, which it turns off. Tested with a pretend Canvas and a made-up feed (no real student data), and against the real migrations in PGlite.
+
+| File | What it is |
+| --- | --- |
+| `src/server/canvas/http.ts` | HTTPS for addresses users type in, protected against SSRF: https only, private and local networks refused at the moment of connecting (including after redirects), 3 redirects at most, a timeout and a size cap |
+| `src/server/canvas/feed.ts` | Reads the feed link, an iCalendar (`.ics`) file, with `ical.js`. Assignments only, with the course from the `[bracket]` in the title and its id from the link |
+| `src/server/canvas/api.ts` | The Canvas REST API with a token: courses, then each course's assignments through `calendar_events`, which gives each student their own due date. Turns Canvas's answers into the engine's errors (#214) |
+| `src/server/canvas/adapter.ts` | The sync adapter. It uses whichever method the account has, and downloads a feed once per sync |
+| `src/server/canvas/connect.ts` | Checks the link or token with Canvas, saves it sealed, and runs the first sync |
+| `src/server/connections.ts` | The Connections list and the course toggles, scoped to the user |
+| `src/app/api/connect/canvas`, `src/app/api/connections/…`, `src/app/api/sync` | The routes. All need a signed-in user |
+| `src/components/settings/ConnectionsPanel.tsx` | Settings → Connections: the Canvas card with both connection methods, step-by-step instructions, course toggles, Sync Now and messages |
+
+**Decided while building:**
+- **One Canvas connection per school per user,** whichever method. Course and assignment ids are the same in both, so switching from feed link to token keeps the same events and notes.
+- **Assignments only** (#192). The feed also holds course events like office hours, which are left out for now.
+- **A student's extended due date** shows up in the feed as its own entry, `assignment_override_<id>`.
+- **#194:** there's still no tasks table. Event ids survive due date changes (tested), so attaching tasks works once the Tasks epic adds the table.
+
+**Not covered by automated tests:** a real school's feed. Test it by connecting your own account in Settings.
+
 **#190 Spike first.** It needs no backend, so start it on day one. With a real student account, find out:
 - whether the school allows personal access tokens (Account → Settings → New access token)
 - whether the calendar feed link works (Calendar → Calendar Feed)

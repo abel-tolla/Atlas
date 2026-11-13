@@ -6,7 +6,9 @@ import { NextResponse, type NextRequest } from 'next/server'
 
 const OPEN_PAGES = ['/login', '/signup', '/verify-email', '/forgot-password', '/reset-password']
 // /api/health reports only counts and timings, never data (see its route file).
-const OPEN_API = ['/api/health']
+// /api/cron/daily-sync is called by Vercel Cron, which has no session. The
+// route checks its own CRON_SECRET and refuses anyone without it.
+const OPEN_API = ['/api/health', '/api/cron/daily-sync']
 const COOKIE = 'authjs.session-token'
 
 const isOpen = (path: string) =>
